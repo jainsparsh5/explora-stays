@@ -9,6 +9,7 @@ const Logo = () => {
     <>
       <div className="flex gap-2 items-center justify-center">
         <Image
+          onClick={()=>router.push("/")}
           src="/images/logo.svg"
           alt="Logo"
           height="35"
