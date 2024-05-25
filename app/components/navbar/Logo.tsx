@@ -14,7 +14,7 @@ const Logo = () => {
           alt="Logo"
           height="35"
           width="35"
-          className="hidden md:block cursor-pointer"
+          className="hidden md:block cursor-pointer h-auto w-auto"
         />
         <span
           className="text-lg font-bold cursor-pointer"
