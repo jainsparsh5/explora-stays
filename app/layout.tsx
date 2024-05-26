@@ -14,9 +14,9 @@ const font = Nunito({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Explora Stays",
   description: "Find your next stay with us",
-  icons:[
+  icons: [
     {
-      url : "/images/logo.svg",
+      url: "/images/logo.svg",
       href: "/images/logo.svg",
     },
   ],
@@ -35,8 +35,8 @@ export default async function RootLayout({
         <RentModal />
         <LoginModal />
         <RegisterModal />
-        <Navbar currentUser={currentUser}/>
-        {children}
+        <Navbar currentUser={currentUser} />
+        <div className="pb-20 pt-28">{children}</div>
       </body>
     </html>
   );
