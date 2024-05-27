@@ -15,3 +15,22 @@ body,
   z-index: 0 !important;
 }
 
+/* styles.css */
+@keyframes pump {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-pump {
+  animation: pump 0.6s ease-in-out;
+}
