@@ -11,6 +11,7 @@ import { SafeUser } from "@/app/types";
 import { signOut } from "next-auth/react";
 import toast from "react-hot-toast";
 import useRentModal from "@/app/hooks/useRentModal";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -20,6 +21,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
+  const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,7 +35,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
     }
     //open rent modal
     rentModal.onOpen();
-  }, [currentUser,loginModal,rentModal]);
+  }, [currentUser, loginModal, rentModal]);
 
   return (
     <div className="relative">
@@ -49,7 +51,12 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition"
         >
           <AiOutlineMenu />
-          <div className="hidden md:block ">
+          <div className="hidden md:flex items-center justify-center gap-3">
+            {!currentUser?.image && (
+              <span className="font-light">
+                {currentUser?.name?.split(" ")[0]}
+              </span>
+            )}
             <Avatar src={currentUser?.image} />
           </div>
         </div>
@@ -59,11 +66,17 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
-                <MenuItem onClick={() => {}} label="My Trips" />
+                <MenuItem
+                  onClick={() => router.push("/trips")}
+                  label="My Trips"
+                />
                 <MenuItem onClick={() => {}} label="My Favorites" />
                 <MenuItem onClick={() => {}} label="My Reservations" />
                 <MenuItem onClick={() => {}} label="My Properties" />
-                <MenuItem onClick={rentModal.onOpen} label="Explorafy My Home" />
+                <MenuItem
+                  onClick={rentModal.onOpen}
+                  label="Explorafy My Home"
+                />
                 <hr />
                 <MenuItem
                   onClick={() => {

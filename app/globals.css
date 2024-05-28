@@ -17,7 +17,8 @@ body,
 
 /* styles.css */
 @keyframes pump {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   25% {
@@ -33,4 +34,13 @@ body,
 
 .animate-pump {
   animation: pump 0.6s ease-in-out;
+}
+
+.rdrMonth {
+  width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+  font-size: 14px !important;
+  width: 100% !important;
 }
