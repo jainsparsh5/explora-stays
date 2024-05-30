@@ -9,7 +9,10 @@ const Logo = () => {
     <>
       <div className="flex gap-2 items-center justify-center">
         <Image
-          onClick={()=>router.push("/")}
+          onClick={() => {
+            router.push("/");
+            router.refresh();
+          }}
           src="/images/logo.svg"
           alt="Logo"
           height="35"
@@ -18,7 +21,10 @@ const Logo = () => {
         />
         <span
           className="text-lg font-bold cursor-pointer"
-          onClick={() => router.push("/")}
+          onClick={() => {
+            router.push("/");
+            router.refresh();
+          }}
         >
           Explora Stays
         </span>
