@@ -2,10 +2,10 @@
 
 import useCountries from "@/app/hooks/useCountries";
 import useSearchModal from "@/app/hooks/useSearchModal";
-import { differenceInDays } from "date-fns";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
 import { BiSearch } from "react-icons/bi";
+export const dynamic = 'force-dynamic'; 
 
 const Search = () => {
   const searchModal = useSearchModal();

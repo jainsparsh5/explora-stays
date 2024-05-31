@@ -5,6 +5,8 @@ import { useCallback } from "react";
 import { IconType } from "react-icons";
 import qs from "query-string";
 
+export const dynamic = 'force-dynamic'; 
+
 interface CategoryBoxProps {
   icon: IconType;
   label: string;

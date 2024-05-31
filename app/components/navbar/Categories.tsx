@@ -12,6 +12,7 @@ import { PiWindmill } from "react-icons/pi";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import { VscFlame } from "react-icons/vsc";
 import CategoryBox from "../CategoryBox";
+export const dynamic = 'force-dynamic'; 
 
 export const categories = [
   {
